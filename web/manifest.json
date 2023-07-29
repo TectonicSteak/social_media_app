@@ -1,6 +1,6 @@
 {
-    "name": "socia_media_app",
-    "short_name": "socia_media_app",
+    "name": "insta_clone",
+    "short_name": "insta_clone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

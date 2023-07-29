@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.socia_media_app">
+    package="com.example.insta_clone">
    <application
-        android:label="socia_media_app"
+        android:label="insta_clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
