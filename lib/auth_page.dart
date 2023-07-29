@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/loginPage.dart';
-import 'package:insta_clone/registerPage.dart';
+import 'package:insta_clone/pages/loginPage.dart';
+import 'package:insta_clone/pages/registerPage.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});

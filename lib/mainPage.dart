@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/auth_page.dart';
-import 'package:insta_clone/homePage.dart';
+import 'package:insta_clone/pages/homePage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
