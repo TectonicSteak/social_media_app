@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final user = FirebaseAuth.instance.currentUser;
+  // final user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +48,10 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Signed in as " + user!.email!),
+            // Text("Signed in as " + user!.email!),
             MaterialButton(
               onPressed: (){
-                FirebaseAuth.instance.signOut();
+                // FirebaseAuth.instance.signOut();
               },
               color: Colors.deepPurpleAccent,
               child: Text("Sign out",style: TextStyle(color: Colors.white),),

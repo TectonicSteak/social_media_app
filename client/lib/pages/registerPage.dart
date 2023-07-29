@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:insta_clone/pages/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,8 +26,8 @@ class _RegisterPageState extends State<RegisterPage> {
       if (emailController.text.isNotEmpty &&
           passwordController.text.isNotEmpty) {
         var regBody = {
-          "email": emailController.text,
-          "password": passwordController.text
+          "email": emailController.text.trim(),
+          "password": passwordController.text.trim()
         };
         print(registration + " mine");
         var response = await http.post(Uri.parse(registration), //connects to db
@@ -37,11 +37,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
         var jsonResponse = jsonDecode(response.body); //decodes it to get data
         print(jsonResponse['status']);
-        print(jsonResponse['message']);
+        print(jsonResponse['user']);
 
-        // if(jsonResponse['status']){
-        //   Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage()));
-        // }
+        if(jsonResponse['status']){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        }
       } else {
         setState(() {
           _isNotValidate = true;
