@@ -4,8 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:insta_clone/pages/forgotPassPage.dart';
 import 'package:insta_clone/pages/registerPage.dart';
 import 'package:insta_clone/pages/homePage.dart';
+import 'package:insta_clone/pages/forgotPassPage.dart';
+
+//Color Palette
+const bgcolor = Color.fromARGB(255, 241, 236, 255);
 
 class LoginPage extends StatefulWidget {
   final VoidCallback shorRegisterPage;
@@ -83,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: bgcolor,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -119,8 +124,8 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
+                        color: bgcolor,
+                        border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0),
@@ -142,8 +147,8 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
+                        color: bgcolor,
+                        border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0),
@@ -161,7 +166,33 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20,
                 ),
-
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context){
+                              return ForgotPasswordPage();
+                        }));
+                        },
+                        child: Text(
+                          "Forgot Password ?",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          )
+                                      
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 //sign in button
                 Padding(
                     padding: EdgeInsets.symmetric(horizontal: 25.0),

@@ -5,6 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
+
+
+//Color Palette
+const bgcolor = Color.fromARGB(255, 241, 236, 255);
+
+
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
 
@@ -68,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: bgcolor,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -104,8 +110,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
+                        color: bgcolor,
+                        border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0),
@@ -127,8 +133,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
+                        color: bgcolor,
+                        border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0),
@@ -152,8 +158,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        border: Border.all(color: Colors.white),
+                        color: bgcolor,
+                        border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0),

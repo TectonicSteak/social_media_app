@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+
+//Color Palette
+const bgcolor = Color.fromARGB(255, 241, 236, 255);
+
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -16,16 +21,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: bgcolor,
       bottomNavigationBar: Container(
-        color: Colors.black,
+        color: Colors.deepPurpleAccent,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GNav(
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.deepPurpleAccent,
             color: Colors.white,
-            activeColor: Colors.white,
-            tabBackgroundColor: Colors.grey.shade800,
+            activeColor: Colors.black,
+            tabBackgroundColor: bgcolor,
             gap: 15,
             padding: EdgeInsets.symmetric(horizontal: 16,vertical: 20),
             tabs: const[
