@@ -4,13 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:insta_clone/pages/forgotPassPage.dart';
 import 'package:insta_clone/pages/registerPage.dart';
 import 'package:insta_clone/pages/homePage.dart';
-import 'package:insta_clone/pages/forgotPassPage.dart';
 
 //Color Palette
 const bgcolor = Color.fromARGB(255, 241, 236, 255);
+const textbox_bgcolor = Color.fromARGB(255, 223, 211, 255);
 
 class LoginPage extends StatefulWidget {
   final VoidCallback shorRegisterPage;
@@ -121,10 +120,10 @@ class _LoginPageState extends State<LoginPage> {
                   height: 60,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: bgcolor,
+                        color: textbox_bgcolor,
                         border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
@@ -144,10 +143,10 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: bgcolor,
+                        color: textbox_bgcolor,
                         border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
@@ -166,40 +165,13 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (context){
-                              return ForgotPasswordPage();
-                        }));
-                        },
-                        child: Text(
-                          "Forgot Password ?",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          )
-                                      
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 //sign in button
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(horizontal: 100.0),
                     child: GestureDetector(
                       onTap: signIn,
                       child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
                               color: Colors.deepPurpleAccent,
                               borderRadius: BorderRadius.circular(5)),

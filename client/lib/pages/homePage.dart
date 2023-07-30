@@ -39,6 +39,10 @@ class _HomePageState extends State<HomePage> {
                 text: 'Home',
               ),
               GButton(
+                icon: Icons.search,
+                text: 'Search',
+              ),
+              GButton(
                 icon: Icons.chat,
                 text: 'Chat',
               ),
@@ -47,21 +51,6 @@ class _HomePageState extends State<HomePage> {
                 text: 'Settings',
               ),
           ]),
-        ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Text("Signed in as " + user!.email!),
-            MaterialButton(
-              onPressed: (){
-                // FirebaseAuth.instance.signOut();
-              },
-              color: Colors.deepPurpleAccent,
-              child: Text("Sign out",style: TextStyle(color: Colors.white),),
-            ),
-          ],
         ),
       ),
     );

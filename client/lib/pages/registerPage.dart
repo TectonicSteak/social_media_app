@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 //Color Palette
 const bgcolor = Color.fromARGB(255, 241, 236, 255);
-
+const textbox_bgcolor = Color.fromARGB(255, 223, 211, 255);
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -107,10 +107,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 60,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: bgcolor,
+                        color: textbox_bgcolor,
                         border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
@@ -130,10 +130,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: bgcolor,
+                        color: textbox_bgcolor,
                         border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
@@ -155,10 +155,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: bgcolor,
+                        color: textbox_bgcolor,
                         border: Border.all(color: Colors.deepPurpleAccent),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
@@ -180,11 +180,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 //sign in button
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(horizontal: 100.0),
                     child: GestureDetector(
                       onTap: register,
                       child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
                               color: Colors.deepPurpleAccent,
                               borderRadius: BorderRadius.circular(5)),
