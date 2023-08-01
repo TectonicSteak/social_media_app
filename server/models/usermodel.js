@@ -3,8 +3,6 @@ const db = require('../config/db')
 
 const {Schema} = moong
 
-
-
 const userSchema = new Schema({
     email:{
         type: String,
@@ -17,8 +15,6 @@ const userSchema = new Schema({
         required:true,
     },
 })
-
-
 
 const userModel = db.model('user', userSchema)
 
