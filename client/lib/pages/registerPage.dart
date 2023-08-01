@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
+import '../config.dart';
+
 
 
 //Color Palette
@@ -24,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   bool _isNotValidate = false;
-  final registration = "http://localhost:4000/user/register";
+  final registration = url +  "/user/register";
 
   Future register() async {
     if (confirmedPassword()) {

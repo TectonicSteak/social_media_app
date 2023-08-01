@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:insta_clone/pages/homePage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../config.dart';
 
 //Color Palette
 const bgcolor = Color.fromARGB(255, 241, 236, 255);
@@ -22,12 +25,20 @@ class _LoginPageState extends State<LoginPage> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final login = "http://localhost:4000/user/login";
- 
-  
+  final login = url + "/user/login";
+  late SharedPreferences prefs;
 
-  
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initSharedPref();
+  }
 
+  //to get user instance
+  void initSharedPref() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   Future signIn() async {
     if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
@@ -46,8 +57,10 @@ class _LoginPageState extends State<LoginPage> {
         print(test);
         var myToken = jsonResponse[
             'token']; //token send from the back end containing all the user data
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => HomePage()));
+        prefs.setString('token', myToken);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+        print(myToken);
         Fluttertoast.showToast(
           msg: 'sign in successfull',
           toastLength: Toast
