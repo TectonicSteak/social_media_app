@@ -54,6 +54,7 @@ class _AddPostState extends State<AddPost> {
           children: [
            Row (
             children : [
+              //Profile Pic top left
               CircleAvatar (
                 backgroundImage : NetworkImage(
                   'https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80'
@@ -61,13 +62,33 @@ class _AddPostState extends State<AddPost> {
               ),
               //if padding and all required, use container instead
               SizedBox(   
-                width :  550 ,  //maxWidth * 0.3,
+                //Caption, centre
+                width :  250 ,  //maxWidth * 0.3,
                 child : TextField(
                   decoration : const InputDecoration(
-                    hintText : 'Write post desc...',
+                    hintText : 'Write caption here..',
                     border : InputBorder.none,
                   ),
-                  maxLines: 8,
+                  maxLines: 10,
+                ),
+              ),
+              SizedBox (
+                height : 45,
+                width : 45,
+                child : AspectRatio(
+                  aspectRatio : 487/451,
+                  child : Container(
+                    //Upload pic preview, top right
+                    decoration : BoxDecoration(
+                      image : DecorationImage(
+                        image : NetworkImage(
+                          'https://images.unsplash.com/photo-1574285013029-29296a71930e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80'
+                        ), // Image preview of image to be uploaded in post
+                          fit : BoxFit.fill,
+                          alignment : FractionalOffset.topCenter, 
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
