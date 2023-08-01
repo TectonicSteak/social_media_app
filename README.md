@@ -18,7 +18,7 @@
 
 ## Team Members
 ### **Team Name** : 
-1. [Adithya S Prabhi](https://github.com/TectonicSteak)
+1. [Adithya S Prabhu](https://github.com/TectonicSteak)
 1. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
 1. [S Mahesh](https://github.com/smahesh77)
 
