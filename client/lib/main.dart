@@ -24,41 +24,22 @@ void main() async {
     await Firebase.initializeApp();
   }
 
-  runApp(MyApp());
+   runApp(MyApp(token: prefs.getString('token'),));
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String? token;
-
-  @override
-  void initState() {
-    super.initState();
-    _getUserInfoFromToken(); // Call the method to retrieve user info from the token
-  }
-
-  Future<void> _getUserInfoFromToken() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    token = prefs.getString('token'); // Get the token from shared preferences
-    print(token);
-    if (token != null) {
-      // Use the user information as needed (e.g., store it in state variables)
-    } else {
-      // Handle the case where the token is null (e.g., user is not authenticated)
-    }
-  }
+  final token;
+  const MyApp({
+    @required this.token,
+    Key? key,
+}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: (token != null) ? MainPage():HomePage() ,
+      home: (token != null )?HomePage():MainPage()
     );
   }
 }

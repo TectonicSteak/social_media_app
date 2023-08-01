@@ -33,14 +33,14 @@ class _SettingsPageState extends State<SettingsPage> {
       Map<String, dynamic> jwtDecodeToken = JwtDecoder.decode(token);
 
       // Get user information from the decoded token
-      String? email = jwtDecodeToken['email'];
-      print(email);
+      //String? email = jwtDecodeToken['email'];
+      //print(email);
       print(
           "helllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll0");
 
       // Use the user information as needed (e.g., store it in state variables)
       setState(() {
-        this.email = email!;
+        //this.email = email!;
       });
     } else {
       // Handle the case where the token is null (e.g., user is not authenticated)
@@ -86,9 +86,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
             ),
-            Container(
-              child: Text(email),
-            )
+            // Container(
+            //   child: Text(email),
+            // )
           ],
         ),
       ),
