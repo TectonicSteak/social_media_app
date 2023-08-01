@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:insta_clone/pages/chatPage.dart';
+import 'package:insta_clone/pages/homescreenPage.dart';
+import 'package:insta_clone/pages/searchPage.dart';
+import 'package:insta_clone/pages/settingsPage.dart';
 
 
 //Color Palette
@@ -16,7 +19,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  // final user = FirebaseAuth.instance.currentUser;
+  final List<Widget> pages=[
+    HomeScreenPage(),
+    SearchPage(),
+    Chatpage(),
+    SettingsPage()
+  ];
+
+  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +43,15 @@ class _HomePageState extends State<HomePage> {
             tabBackgroundColor: bgcolor,
             gap: 15,
             padding: EdgeInsets.symmetric(horizontal: 16,vertical: 20),
+
+            selectedIndex: pageIndex,
+
+            onTabChange: (index){
+              setState(() {
+                pageIndex = index;
+              });
+            },
+
             tabs: const[
               GButton(
                 icon: Icons.home,
@@ -53,6 +72,7 @@ class _HomePageState extends State<HomePage> {
           ]),
         ),
       ),
+      body: pages[pageIndex],
     );
   }
 }
