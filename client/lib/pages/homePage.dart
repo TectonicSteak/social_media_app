@@ -4,7 +4,7 @@ import 'package:insta_clone/pages/chatPage.dart';
 import 'package:insta_clone/pages/homescreenPage.dart';
 import 'package:insta_clone/pages/searchPage.dart';
 import 'package:insta_clone/pages/settingsPage.dart';
-
+import 'package:insta_clone/pages/addPost.dart';
 
 //Color Palette
 const bgcolor = Color.fromARGB(255, 241, 236, 255);
@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> pages=[
     HomeScreenPage(),
     SearchPage(),
+    AddPost(),
     Chatpage(),
     SettingsPage()
   ];
@@ -60,6 +61,10 @@ class _HomePageState extends State<HomePage> {
               GButton(
                 icon: Icons.search,
                 text: 'Search',
+              ),
+              GButton(
+                icon: Icons.home,
+                text: 'Add Post',
               ),
               GButton(
                 icon: Icons.chat,

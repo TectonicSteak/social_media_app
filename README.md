@@ -12,15 +12,15 @@
 ## Table of Contents
 1. [What is social_media_app?](#project-description)
 2. [Team Members](#team-members)
-5. [Project Demo](#project-demo)
+3. [Project Demo](#project-demo)
 
 ## Project Description
 
 ## Team Members
 ### **Team Name** : 
-1. [Adithya S Prabhi](https://github.com/TectonicSteak)
-1. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
-1. [S Mahesh](https://github.com/smahesh77)
+1. [Adithya S Prabhu](https://github.com/TectonicSteak)
+2. [Mrinalini Nair Ani](https://github.com/hacksh4w/)
+3. [S Mahesh](https://github.com/smahesh77)
 
 ### Dependencies 
 ` 17.1`
