@@ -91,6 +91,7 @@ class _AddPostState extends State<AddPost> {
                   ),
                 ),
               ),
+              const Divider(),
             ],
            ),
           ],
