@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/auth_page.dart';
+import 'package:insta_clone/pages/userFollowers.dart';
+import 'package:insta_clone/pages/userFollowing.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,6 +19,8 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   late String email;
+    late SharedPreferences prefs;
+
 
   void initState() {
     super.initState();
@@ -24,7 +28,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Future<void> _getUserInfoFromToken() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs = await SharedPreferences.getInstance();
     String? token =
         prefs.getString('token'); // Get the token from shared preferences
 
@@ -86,9 +90,22 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
             ),
-            // Container(
-            //   child: Text(email),
-            // )
+            Container(
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {Navigator.push(
+            context, MaterialPageRoute(builder: (context) =>Followers()));},
+                child: Text("followers"),
+              ),
+            ),
+            Container(
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {Navigator.push(
+            context, MaterialPageRoute(builder: (context) =>Following( token: prefs.getString('token'),)));},
+                child: Text("following"),
+              ),
+            )
           ],
         ),
       ),

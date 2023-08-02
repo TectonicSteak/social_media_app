@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'package:insta_clone/auth_page.dart';
 import 'package:insta_clone/pages/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../config.dart';
 
 
@@ -27,6 +28,18 @@ class _RegisterPageState extends State<RegisterPage> {
   final _confirmPasswordController = TextEditingController();
   bool _isNotValidate = false;
   final registration = url +  "/user/register";
+  late SharedPreferences prefs;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initSharedPref();
+  }
+
+  //to get user instance
+  void initSharedPref() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   Future register() async {
     if (confirmedPassword()) {
@@ -45,9 +58,9 @@ class _RegisterPageState extends State<RegisterPage> {
         var jsonResponse = jsonDecode(response.body); //decodes it to get data
         print(jsonResponse['status']);
         print(jsonResponse['user']);
-
+        
         if(jsonResponse['status']){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AuthPage()));
         }
       } else {
         setState(() {
