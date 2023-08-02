@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/auth_page.dart';
+import 'package:insta_clone/pages/userFollowers.dart';
+import 'package:insta_clone/pages/userFollowing.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,6 +19,8 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   late String email;
+    late SharedPreferences prefs;
+
 
   void initState() {
     super.initState();
@@ -24,7 +28,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Future<void> _getUserInfoFromToken() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs = await SharedPreferences.getInstance();
     String? token =
         prefs.getString('token'); // Get the token from shared preferences
 
@@ -33,14 +37,14 @@ class _SettingsPageState extends State<SettingsPage> {
       Map<String, dynamic> jwtDecodeToken = JwtDecoder.decode(token);
 
       // Get user information from the decoded token
-      String? email = jwtDecodeToken['email'];
-      print(email);
+      //String? email = jwtDecodeToken['email'];
+      //print(email);
       print(
           "helllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll0");
 
       // Use the user information as needed (e.g., store it in state variables)
       setState(() {
-        this.email = email!;
+        //this.email = email!;
       });
     } else {
       // Handle the case where the token is null (e.g., user is not authenticated)
@@ -87,7 +91,20 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             Container(
-              child: Text(email),
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {Navigator.push(
+            context, MaterialPageRoute(builder: (context) =>Followers()));},
+                child: Text("followers"),
+              ),
+            ),
+            Container(
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {Navigator.push(
+            context, MaterialPageRoute(builder: (context) =>Following( token: prefs.getString('token'),)));},
+                child: Text("following"),
+              ),
             )
           ],
         ),

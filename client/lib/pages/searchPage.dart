@@ -1,12 +1,12 @@
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 
+import 'allUsers.dart';
 
 //Color Palette
 const bgcolor = Color.fromARGB(255, 241, 236, 255);
 const textbox_bgcolor = Color.fromARGB(255, 223, 211, 255);
-
-
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -16,6 +16,18 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  late SharedPreferences prefs;
+
+    void initState() {
+    super.initState();
+    _getUserInfoFromToken(); // Call the method to retrieve user info from the token
+  }
+
+  Future<void> _getUserInfoFromToken() async {
+    prefs = await SharedPreferences.getInstance();
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +50,14 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
+            Container(
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {Navigator.push(
+            context, MaterialPageRoute(builder: (context) =>UserListScreen()));},
+                child: Text("Show all users"),
+              ),
+            )
           ],
         ),
       ),

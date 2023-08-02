@@ -1,19 +1,28 @@
 const moong = require('mongoose')
 const db = require('../config/db')
+const mongoose = require('mongoose');
 
-const {Schema} = moong
+const { Schema } = moong
 
 const userSchema = new Schema({
-    email:{
+    email: {
         type: String,
-        lowercase:true,
-        required:true,
+        lowercase: true,
+        required: true,
         unique: true
     },
-    password:{
+    password: {
         type: String,
-        required:true,
+        required: true,
     },
+    following: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+    }],
+    followers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+    }]
 })
 
 const userModel = db.model('user', userSchema)
