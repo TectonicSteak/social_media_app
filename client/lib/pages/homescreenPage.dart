@@ -22,7 +22,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: 100,

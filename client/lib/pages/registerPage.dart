@@ -96,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.android,
+                  Icons.app_registration,
                   size: 80.0,
                 ),
                 SizedBox(

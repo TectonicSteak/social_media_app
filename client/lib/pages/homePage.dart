@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(horizontal: 16,vertical: 20),
 
             selectedIndex: pageIndex,
-
+            
             onTabChange: (index){
               setState(() {
                 pageIndex = index;
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 text: 'Search',
               ),
               GButton(
-                icon: Icons.home,
+                icon: Icons.add,
                 text: 'Add Post',
               ),
               GButton(

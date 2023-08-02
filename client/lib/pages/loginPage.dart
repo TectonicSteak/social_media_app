@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.android,
+                  Icons.message,
                   size: 80.0,
                 ),
                 SizedBox(

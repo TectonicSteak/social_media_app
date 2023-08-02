@@ -44,6 +44,7 @@ class _UserListScreenState extends State<Followers> {
     return Scaffold(
       appBar: AppBar(
         title: Text('User List'),
+        backgroundColor: Colors.deepPurpleAccent,
       ),
       body: ListView.builder(
         itemCount: users.length,

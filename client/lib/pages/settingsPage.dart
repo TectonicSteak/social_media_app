@@ -61,52 +61,63 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       backgroundColor: bgcolor,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              height: 100,
-              color: textbox_bgcolor,
-              child: Center(
-                child: Text(
-                  "Settings Page",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.only(left:0.0,top:30.0,right:0.0,bottom:0.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Container(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent,
+                    foregroundColor: Colors.white
+                  ),
+                    onPressed: () {
+                      clearJwtToken();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AuthPage()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+                      child: Text("sign out"),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Center(
-              child: Container(
+              SizedBox(height: 30,),
+              Container(
                 child: ElevatedButton(
-                  onPressed: () {
-                    clearJwtToken();
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AuthPage()));
-                  },
-                  child: Text("sign out"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  onPressed: () {Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Followers()));},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+                    child: Text("followers"),
+                  ),
                 ),
               ),
-            ),
-            Container(
-              height: 100,
-              child: ElevatedButton(
-                onPressed: () {Navigator.push(
-            context, MaterialPageRoute(builder: (context) =>Followers()));},
-                child: Text("followers"),
-              ),
-            ),
-            Container(
-              height: 100,
-              child: ElevatedButton(
-                onPressed: () {Navigator.push(
-            context, MaterialPageRoute(builder: (context) =>Following( token: prefs.getString('token'),)));},
-                child: Text("following"),
-              ),
-            )
-          ],
+              SizedBox(height: 30,),
+              Container(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white
+                  ),
+                  onPressed: () {Navigator.push(
+              context, MaterialPageRoute(builder: (context) =>Following( token: prefs.getString('token'),)));},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+                    child: Text("following"),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
