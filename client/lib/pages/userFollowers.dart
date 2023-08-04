@@ -43,7 +43,7 @@ class _UserListScreenState extends State<Followers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User List'),
+        title: Text('Followers'),
         backgroundColor: Colors.deepPurpleAccent,
       ),
       body: ListView.builder(

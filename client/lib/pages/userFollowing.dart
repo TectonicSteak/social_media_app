@@ -46,7 +46,7 @@ class _UserListScreenState extends State<Following> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User List'),
+        title: Text('Following'),
         backgroundColor: Colors.deepPurpleAccent,
       ),
       body: ListView.builder(

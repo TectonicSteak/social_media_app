@@ -4,6 +4,12 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config.dart';
 
+
+//Color Palette
+const bgcolor = Color.fromARGB(255, 241, 236, 255);
+const textbox_bgcolor = Color.fromARGB(255, 223, 211, 255);
+
+
 class UserListScreen extends StatefulWidget {
   @override
   _UserListScreenState createState() => _UserListScreenState();
@@ -59,7 +65,9 @@ class _UserListScreenState extends State<UserListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgcolor,
       appBar: AppBar(
+        backgroundColor: Colors.deepPurpleAccent,
         title: Text('User List'),
       ),
       body: ListView.builder(
@@ -67,29 +75,35 @@ class _UserListScreenState extends State<UserListScreen> {
         itemBuilder: (context, index) {
           final user = users[index];
           return ListTile(
-              title: Text(user['email']),
-              subtitle: ElevatedButton(
-                onPressed: () {
-                  register(user['email']);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.teal, // Text color of the button
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(user['email']),
+                ElevatedButton(
+                  onPressed: () {
+                    register(user['email']);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.deepPurpleAccent[100], // Text color of the button
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 5, // Elevation of the button
+                    shadowColor: Colors.teal.withOpacity(0.4), // Shadow color
                   ),
-                  elevation: 5, // Elevation of the button
-                  shadowColor: Colors.teal.withOpacity(0.4), // Shadow color
-                ),
-                child: const Text(
-                  "Follow",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                  child: const Text(
+                    "Follow",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ));
+              ],
+            )
+          );
         },
       ),
     );

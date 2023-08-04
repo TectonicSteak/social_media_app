@@ -50,12 +50,21 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
             Container(
-              height: 100,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurpleAccent,
+                  foregroundColor: Colors.white
+                ),
                 onPressed: () {Navigator.push(
             context, MaterialPageRoute(builder: (context) =>UserListScreen()));},
-                child: Text("Show all users"),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 15),
+                  child: Text("Show all users"),
+                ),
               ),
             )
           ],
